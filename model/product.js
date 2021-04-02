@@ -4,22 +4,6 @@ const { Schema } = mongoose;
 
 const config = require('../config');
 
-const colorScheme = new Schema({
-	type: String,
-	enum: config.product.colors,
-},
-{
-	_id: false,
-});
-
-const sizeScheme = new Schema({
-	type: String,
-	enum: config.product.sizes,
-},
-{
-	_id: false,
-});
-
 const productScheme = new Schema({
 	category: {
 		type: String,
@@ -42,11 +26,13 @@ const productScheme = new Schema({
 		default: '',
 	},
 	colors: {
-		type: [colorScheme],
+		type: [String],
 		required: true,
+		enum: config.product.colors,
 	},
 	sizes: {
-		type: [sizeScheme],
+		type: String,
+		enum: config.product.sizes,
 		required: true,
 	},
 });
