@@ -23,8 +23,6 @@ class ImgBB {
 
 			const { data } = response;
 
-			console.log(data.succes);
-
 			if (data.success !== true) {
 				if (response.status >= 500) {
 					throw new Eerror('Problem on ImgBB side').combine({

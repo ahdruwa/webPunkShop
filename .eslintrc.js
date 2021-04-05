@@ -14,5 +14,6 @@ module.exports = {
 		indent: ['error', 'tab'],
 		'no-tabs': 'off',
 		'func-names': 'off',
+		'no-underscore-dangle': 'off',
 	},
 };

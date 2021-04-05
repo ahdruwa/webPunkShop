@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const cardScheme = new Schema({
-	number: {
+const tokenScheme = new Schema({
+	refresh: {
 		type: String,
 		required: true,
 	},
-	date: {
+	userAgent: {
 		type: String,
 		required: true,
 	},
 });
 
-module.exports = cardScheme;
+module.exports = mongoose.model('Token', tokenScheme);
